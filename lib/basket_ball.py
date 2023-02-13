@@ -221,4 +221,12 @@ def player_stats(player_name):
                 return player
 
 def average_rebounds_by_shoe_brand():
-    pass
+    rebounds_by_brand = dict()
+    for team in game_dict().values():
+        for player in team["players"]:
+            if player["shoe_brand"] not in rebounds_by_brand:
+                rebounds_by_brand[player["shoe_brand"]] = list()
+            rebounds_by_brand[player["shoe_brand"]].append(player["rebounds_per_game"])
+    for brand, rebounds in rebounds_by_brand.items():
+        average = sum(rebounds) / len(rebounds)
+        print(f"{brand}:  {average:.2f}")
