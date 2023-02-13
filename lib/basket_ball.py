@@ -195,8 +195,10 @@ def player_age(player_name):
             if player["name"] == player_name:
                 return player["age"]
 
-def team_colors():
-    pass
+def team_colors(team_name):
+    for team in game_dict().values():
+        if team["team_name"] == team_name:
+            return team["colors"]
 
 def team_names():
     pass
