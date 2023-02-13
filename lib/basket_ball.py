@@ -201,7 +201,10 @@ def team_colors(team_name):
             return team["colors"]
 
 def team_names():
-    pass
+    team_names = list()
+    for team in game_dict().values():
+        team_names.append(team["team_name"])
+    return team_names
 
 def player_numbers():
     pass
