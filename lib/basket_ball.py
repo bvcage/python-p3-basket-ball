@@ -214,8 +214,11 @@ def player_numbers(team_name):
                 numbers.append(player["number"])
     return numbers
 
-def player_stats():
-    pass
+def player_stats(player_name):
+    for team in game_dict().values():
+        for player in team["players"]:
+            if player["name"] == player_name:
+                return player
 
 def average_rebounds_by_shoe_brand():
     pass
