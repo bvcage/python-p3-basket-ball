@@ -189,8 +189,11 @@ def num_points_per_game(player_name):
             if player["name"] == player_name:
                 return player["points_per_game"]
 
-def player_age():
-    pass
+def player_age(player_name):
+    for team in game_dict().values():
+        for player in team["players"]:
+            if player["name"] == player_name:
+                return player["age"]
 
 def team_colors():
     pass
